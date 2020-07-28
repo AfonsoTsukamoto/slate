@@ -87,6 +87,7 @@ class Editor extends React.Component {
     resolves: 0,
     updates: 0,
     value: null,
+    mounted: false,
   }
 
   /**
@@ -122,6 +123,8 @@ class Editor extends React.Component {
     if (change) {
       this.onChange(change)
     }
+
+    this.tmp.mounted = true
   }
 
   /**

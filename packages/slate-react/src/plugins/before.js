@@ -110,11 +110,22 @@ function BeforePlugin() {
 
   function onChange(change, editor) {
     const { value } = change
+    const js = {
+      value: value && value.schema && value.schema.toJS(),
+      editor: editor && editor.schema && editor.schema.toJS(),
+    }
+
+    console.log({ onChange: js })
 
     // If the value's schema isn't the editor's schema, update it. This can
     // happen on the initialization of the editor, or if the schema changes.
     // This change isn't save into history since only schema is updated.
-    if (value.schema != editor.schema) {
+    if (
+      editor &&
+      editor.tmp &&
+      editor.tmp.mounted &&
+      value.schema != editor.schema
+    ) {
       change.withoutSaving(() => {
         change.setValue({ schema: editor.schema }).normalize()
       })
