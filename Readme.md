@@ -1,7 +1,7 @@
 <p align="center">
   <a href="#"><img src="./docs/images/banner.png" /></a>
 </p>
-
+<h2>⚠ this is a fork from version 0.41.0</h2>
 <p align="center">
   A <em>completely</em> customizable framework <br/>
   for building rich text editors.
