@@ -1,5 +1,5 @@
 import { Value } from 'slate'
-import { Editor } from 'slate-react'
+import { Editor } from 'slate-react-41'
 
 import React from 'react'
 import initialValue from './value.json'

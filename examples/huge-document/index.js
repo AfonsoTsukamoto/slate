@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import { Editor } from 'slate-react'
+import { Editor } from 'slate-react-41'
 import { Value } from 'slate'
 
 import React from 'react'

@@ -9,5 +9,5 @@ Since Slate is a monorepo with many packages that are versioned separately, we m
 * [`slate-hyperscript`](./packages/slate-hyperscript/Changelog.md)
 * [`slate-plain-serializer`](./packages/slate-plain-serializer/Changelog.md)
 * [`slate-prop-types`](./packages/slate-prop-types/Changelog.md)
-* [`slate-react`](./packages/slate-react/Changelog.md)
+* [`slate-react-41`](./packages/slate-react-41/Changelog.md)
 * [`slate-simulator`](./packages/slate-simulator/Changelog.md)

@@ -1,4 +1,4 @@
-import { Editor, getEventRange, getEventTransfer } from 'slate-react'
+import { Editor, getEventRange, getEventTransfer } from 'slate-react-41'
 import { Block, Value } from 'slate'
 
 import React from 'react'

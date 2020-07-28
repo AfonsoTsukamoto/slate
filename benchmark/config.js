@@ -16,7 +16,7 @@ if (grep) {
     slate: pattern,
     'slate-html-serializer': pattern,
     'slate-plain-serializer': pattern,
-    'slate-react': pattern,
+    'slate-react-41': pattern,
   }
 } else {
   let { config = 'tmp/benchmark-config.js' } = program
@@ -33,7 +33,7 @@ if (grep) {
       slate: /^/,
       'slate-html-serializer': /^/,
       'slate-plain-serializer': /^/,
-      'slate-react': /^/,
+      'slate-react-41': /^/,
     }
   }
 }

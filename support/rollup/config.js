@@ -8,7 +8,7 @@ import slateHtmlSerializer from '../../packages/slate-html-serializer/package.js
 import slateHyperscript from '../../packages/slate-hyperscript/package.json'
 import slatePlainSerializer from '../../packages/slate-plain-serializer/package.json'
 import slatePropTypes from '../../packages/slate-prop-types/package.json'
-import slateReact from '../../packages/slate-react/package.json'
+import slateReact41 from '../../packages/slate-react-41/package.json'
 import slateSimulator from '../../packages/slate-simulator/package.json'
 
 const configurations = [
@@ -21,7 +21,7 @@ const configurations = [
   ...factory(slateHyperscript),
   ...factory(slatePlainSerializer),
   ...factory(slatePropTypes),
-  ...factory(slateReact),
+  ...factory(slateReact41),
   ...factory(slateSimulator),
 ]
 
