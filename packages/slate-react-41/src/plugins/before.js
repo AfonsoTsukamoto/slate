@@ -123,8 +123,11 @@ function BeforePlugin() {
       change.withoutSaving(() => {
         change.setValue({ schema: editor.schema }).normalize()
       })
+    } else if (value.schema != editor.schema) {
+      change.withoutSaving(() => {
+        change.setValue({ schema: editor.schema })
+      })
     }
-
     debug('onChange')
   }
 
