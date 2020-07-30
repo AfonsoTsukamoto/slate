@@ -3,9 +3,14 @@
 </p>
 <h2>⚠ this is a fork from version 0.41.0</h2>
 
-### This repo is currently only publishing the slate-react package as slate-react-41</p>
-### All other package.json are private so the publishing won't run.</p>
-### Run `npm publish` from packages/slate-react-41 to publish a new version
+### This repo is currently only publishing the slate-react package as slate-react-41
+### All other package.json are private so the publishing won't run.
+
+## Publishing
+
+- Bump the version on packages/slate-react-41/package.json
+- Run `yarn build:production` from the main dir to build the latest version
+- Run `npm publish` from packages/slate-react-41 to publish the new version
 
 <p align="center">
   A <em>completely</em> customizable framework <br/>
