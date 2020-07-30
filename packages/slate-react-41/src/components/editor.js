@@ -37,6 +37,7 @@ class Editor extends React.Component {
     autoCorrect: Types.bool,
     autoFocus: Types.bool,
     className: Types.string,
+    normalizeOnChange: Types.bool,
     onChange: Types.func,
     placeholder: Types.any,
     plugins: Types.array,
@@ -63,6 +64,7 @@ class Editor extends React.Component {
     readOnly: false,
     schema: {},
     spellCheck: true,
+    normalizeOnChange: true,
   }
 
   /**
