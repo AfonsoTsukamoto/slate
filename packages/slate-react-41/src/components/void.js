@@ -1,6 +1,7 @@
 import Debug from 'debug'
 import React from 'react'
 import SlateTypes from 'slate-prop-types'
+import { Text as TextModel } from 'slate'
 import Types from 'prop-types'
 
 import Text from './text'
@@ -103,7 +104,7 @@ class Void extends React.Component {
 
   renderText = () => {
     const { block, decorations, node, readOnly, editor } = this.props
-    const child = node.getFirstText()
+    const child = node.getFirstText() || TextModel.fromJSON({})
     return (
       <Text
         block={node.object == 'block' ? node : block}
