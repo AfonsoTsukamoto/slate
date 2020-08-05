@@ -177,7 +177,7 @@ function AfterPlugin() {
       // Since there's a possibility that the data and the rendered node are not in sync,
       // we first check if the endOfNode is actually in the dom
       // if not, we simply focus, otherwise we move there
-      const win = getWindow(this.element)
+      const win = getWindow(event.target)
       const lastText = node.getLastText()
       const el =
         lastText && win.document.querySelector(`[data-key="${lastText.key}"]`)
