@@ -24,7 +24,6 @@ import setEventTransfer from '../utils/set-event-transfer'
  */
 
 const debug = Debug('slate:after')
-
 /**
  * The after plugin.
  *
@@ -175,11 +174,23 @@ function AfterPlugin() {
       node && (schema.isVoid(node) || ancestors.some(a => schema.isVoid(a)))
 
     if (isVoid) {
-      // COMPAT: In Chrome & Safari, selections that are at the zero offset of
-      // an inline node will be automatically replaced to be at the last offset
-      // of a previous inline node, which screws us up, so we always want to set
-      // it to the end of the node. (2016/11/29)
-      change.focus().moveToEndOfNode(node)
+      // Since there's a possibility that the data and the rendered node are not in sync,
+      // we first check if the endOfNode is actually in the dom
+      // if not, we simply focus, otherwise we move there
+      const win = getWindow(this.element)
+      const lastText = node.getLastText()
+      const el =
+        lastText && win.document.querySelector(`[data-key="${lastText.key}"]`)
+
+      if (!el) {
+        change.focus()
+      } else {
+        // COMPAT: In Chrome & Safari, selections that are at the zero offset of
+        // an inline node will be automatically replaced to be at the last offset
+        // of a previous inline node, which screws us up, so we always want to set
+        // it to the end of the node. (2016/11/29)
+        change.focus().moveToEndOfNode(node)
+      }
     }
 
     debug('onClick', { event })
