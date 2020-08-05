@@ -13,25 +13,27 @@ function findDOMPoint(point, win = window) {
   let start = 0
   let n
 
-  // COMPAT: In IE, this method's arguments are not optional, so we have to
-  // pass in all four even though the last two are defaults. (2017/10/25)
-  const iterator = win.document.createNodeIterator(
-    el,
-    NodeFilter.SHOW_TEXT,
-    () => NodeFilter.FILTER_ACCEPT,
-    false
-  )
+  if (el) {
+    // COMPAT: In IE, this method's arguments are not optional, so we have to
+    // pass in all four even though the last two are defaults. (2017/10/25)
+    const iterator = win.document.createNodeIterator(
+      el,
+      NodeFilter.SHOW_TEXT,
+      () => NodeFilter.FILTER_ACCEPT,
+      false
+    )
 
-  while ((n = iterator.nextNode())) {
-    const { length } = n.textContent
-    const end = start + length
+    while ((n = iterator.nextNode())) {
+      const { length } = n.textContent
+      const end = start + length
 
-    if (point.offset <= end) {
-      const o = point.offset - start
-      return { node: n, offset: o >= 0 ? o : 0 }
+      if (point.offset <= end) {
+        const o = point.offset - start
+        return { node: n, offset: o >= 0 ? o : 0 }
+      }
+
+      start = end
     }
-
-    start = end
   }
 
   return null
